@@ -1,0 +1,57 @@
+<div class="col-xs-12 col-sm-8 col-sm-offset-2" *ngIf="weatherResult">
+
+  <section class="well container-fluid">
+    <section class="text-center">
+      <h2>Resultado da pesquisa</h2>
+    </section>
+  </section>
+
+  <section class="well container-fluid">
+    <article class="col-xs-12 col-sm-6">
+      <h2>Cidade e país</h2>
+      <h3>
+        <strong>Cidade</strong>: {{weatherResult.name}}</h3>
+      <h4>
+        <strong>País</strong>: {{weatherResult.sys.country}}</h4>
+    </article>
+
+    <article class="col-xs-12 col-sm-6 text-right">
+      <h2>Condição do vento</h2>
+      <h3>
+        <strong>Velocidade</strong>: {{weatherResult.wind.speed}}m/s</h3>
+      <h4>
+        <strong>Direção</strong>: {{weatherResult.wind.deg}}°</h4>
+    </article>
+  </section>
+
+  <section class="well container-fluid">
+    <h2>Condição do tempo</h2>
+
+    <article class="col-xs-12 col-sm-4" *ngFor="let w of weatherResult.weather">
+      <h3 style="display: inline-block">
+        <strong>Condição</strong>: {{w.main}}</h3>
+      <h4>
+        <strong>Descrição</strong>: {{w.description}}</h4>
+    </article>
+  </section>
+
+  <section class="well container-fluid">
+    <section class="text-center">
+      <h2>Dados relevantes</h2>
+    </section>
+
+    <article class="col-xs-12 col-sm-6">
+      <h3>
+        <strong>Temperatura</strong>: {{weatherResult.main.temp}}°C</h3>
+      <h4>
+        <strong>Pressão</strong>: {{weatherResult.main.pressure}}hPa</h4>
+    </article>
+
+    <article class="col-xs-12 col-sm-6 text-right">
+      <h3>
+        <strong>Umidade</strong>: {{weatherResult.main.humidity}}%</h3>
+      <h4>
+        <strong>Temperatura máxima</strong>: {{weatherResult.main.temp_max}}°C</h4>
+    </article>
+  </section>
+</div>

@@ -1,0 +1,11 @@
+.section-margin-top {
+    margin-top: 65px;
+}
+
+.jumbotron {
+    padding-top: 30px;
+}
+
+.jumbotron h2{
+    margin-top: 0;
+}

@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <section class="container-fluid jumbotron section-margin-top">
+    <h2>
+      Digite o nome da cidade
+    </h2>
+
+    <form novalidate
+          [formGroup]="searchForm"
+          (submit)="searchCity()">
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon" id="basic-addon1">
+          <span class="fa fa-search" aria-hidden="true"></span>
+        </span>
+        <input type="text" class="form-control" formControlName="searchInput">
+        <span class="input-group-btn">
+          <button class="btn btn-default" [disabled]="searchForm.invalid">Pesquisar</button>
+        </span>               
+      </div>
+    </form>
+  </section>
+  <app-weather-result [weatherResult]="weatherResult"></app-weather-result>  
+</div>
